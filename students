@@ -1,0 +1,9 @@
+let students=['ahmed','kareem','jhon','steve'];
+const ages=[20,19,23,22];
+const year=[3,2,1,4];
+
+// module.exports='this is esported by students';
+module.exports={
+   Names:students,
+    Age:ages
+};
