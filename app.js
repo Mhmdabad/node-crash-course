@@ -14,6 +14,7 @@ mongoose.connect('mongodb+srv://MhmdAbad123:asd123@myfirstnodejscluster.wgujv.mo
 //mongodb+srv://MhmdAbad123:<db_password>@myfirstnodejscluster.wgujv.mongodb.net/?retryWrites=true&w=majority&appName=MyFirstNodeJSCluster
 
 const Article=require("./models/Article")
+const user=require("./models/user")
 //resgister view engine
 app.set('view engine','ejs')
 //listen for request
@@ -103,6 +104,20 @@ app.get("/showArticles",async(req,res)=>{
     res.render("articles.ejs",{
         allArticles:Articles
     })
+})
+//blogs
+app.get("/showBlogs",(req,res)=>{
+    //const Articles=await Article.find()
+    const blogs=[{title:"blog number 1",snippet:"Lorem 1"},
+        {title:"blog number 2",snippet:"Lorem 2"},
+        {title:"blog number 3",snippet:"Lorem 3"}
+    ]
+   res.render("blogs.ejs",blogs)
+})
+//login
+app.get("/login",(req,res)=>{
+   res.render("login.ejs")
+    
 })
 //404
 app.use((req,res)=>{
